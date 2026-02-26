@@ -10,6 +10,9 @@ import DevicesPage from './pages/DevicesPage';
 import RateLimitPage from './pages/RateLimitPage';
 import WhitelistPage from './pages/WhitelistPage';
 import AuditPage from './pages/AuditPage';
+import DinaSearchPage from './pages/DinaSearchPage';
+import ClaimHistoryPage from './pages/ClaimHistoryPage';
+import VerifyEventsPage from './pages/VerifyEventsPage';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -45,6 +48,9 @@ export default function App() {
             <Route path="/ratelimit" element={<RateLimitPage />} />
             <Route path="/whitelist" element={<WhitelistPage />} />
             <Route path="/audit" element={<AuditPage />} />
+            <Route path="/dina-search" element={<DinaSearchPage />} />
+            <Route path="/claim-history" element={<ClaimHistoryPage />} />
+            <Route path="/verify-events" element={<VerifyEventsPage />} />
           </Route>
         </Routes>
       </BrowserRouter>
