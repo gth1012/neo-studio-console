@@ -68,7 +68,7 @@ export default function WhitelistPage() {
               value={newValue}
               onChange={(e) => setNewValue(e.target.value)}
               className="w-full px-3 py-2 bg-geo-main border border-geo-border rounded-lg text-sm text-txt-primary focus:outline-none focus:border-status-blue"
-              placeholder="디바이스 ID / IP 주소 / DINA ID"
+              placeholder="기기 ID / IP 주소 / 인증코드"
             />
           </div>
           <button

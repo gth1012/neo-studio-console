@@ -21,8 +21,6 @@ export default function DinaSearchPage() {
 
   return (
     <div className="p-8">
-      <h1 className="text-xl font-semibold text-txt-primary mb-6">인증 코드 조회</h1>
-
       <form onSubmit={handleSearch} className="mb-8">
         <div className="flex gap-3">
           <input
@@ -60,37 +58,37 @@ export default function DinaSearchPage() {
               <div className="text-sm font-medium text-txt-primary">{data.dina_id}</div>
             </div>
             <div className="p-4 bg-geo-bg rounded-lg">
-              <div className="text-xs text-txt-muted mb-1">Status</div>
+              <div className="text-xs text-txt-muted mb-1">상태</div>
               <div className={`text-sm font-medium ${data.status === 'CLAIMED' ? 'text-status-green' : data.status === 'UNCLAIMED' ? 'text-status-yellow' : 'text-status-blue'}`}>
                 {data.status}
               </div>
             </div>
             <div className="p-4 bg-geo-bg rounded-lg">
-              <div className="text-xs text-txt-muted mb-1">Asset Public ID</div>
+              <div className="text-xs text-txt-muted mb-1">자산 공개 ID</div>
               <div className="text-sm font-medium text-txt-primary">{data.asset_public_id || '-'}</div>
             </div>
             <div className="p-4 bg-geo-bg rounded-lg">
-              <div className="text-xs text-txt-muted mb-1">Series ID</div>
+              <div className="text-xs text-txt-muted mb-1">시리즈 ID</div>
               <div className="text-sm font-medium text-txt-primary">{data.series_id || '-'}</div>
             </div>
             <div className="p-4 bg-geo-bg rounded-lg">
-              <div className="text-xs text-txt-muted mb-1">Shipped At</div>
+              <div className="text-xs text-txt-muted mb-1">출고일</div>
               <div className="text-sm font-medium text-txt-primary">
                 {data.shipped_at ? new Date(data.shipped_at).toLocaleString() : '-'}
               </div>
             </div>
             <div className="p-4 bg-geo-bg rounded-lg">
-              <div className="text-xs text-txt-muted mb-1">Claim Count</div>
+              <div className="text-xs text-txt-muted mb-1">정품 등록 횟수</div>
               <div className="text-sm font-medium text-txt-primary">{data.claim_count ?? 0}</div>
             </div>
             <div className="p-4 bg-geo-bg rounded-lg">
-              <div className="text-xs text-txt-muted mb-1">Last Scan At</div>
+              <div className="text-xs text-txt-muted mb-1">마지막 스캔</div>
               <div className="text-sm font-medium text-txt-primary">
                 {data.last_scan_at ? new Date(data.last_scan_at).toLocaleString() : '-'}
               </div>
             </div>
             <div className="p-4 bg-geo-bg rounded-lg">
-              <div className="text-xs text-txt-muted mb-1">Last Claim At</div>
+              <div className="text-xs text-txt-muted mb-1">마지막 정품 등록</div>
               <div className="text-sm font-medium text-txt-primary">
                 {data.last_claim_at ? new Date(data.last_claim_at).toLocaleString() : '-'}
               </div>

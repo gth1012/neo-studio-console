@@ -10,7 +10,7 @@ export default function AuditPage() {
   return (
     <div className="p-8">
       <div className="mb-6">
-        <span className="text-sm text-txt-muted">최근 감사 로그</span>
+        <span className="text-sm text-txt-muted">최근 관리 기록</span>
       </div>
 
       <div className="bg-geo-card border border-geo-border rounded-xl overflow-hidden">

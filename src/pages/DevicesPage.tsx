@@ -44,7 +44,7 @@ export default function DevicesPage() {
             onChange={(e) => { setBlockedOnly(e.target.checked); setPage(1); }}
             className="rounded border-geo-border"
           />
-          차단된 디바이스만
+          차단된 기기만 보기
         </label>
         <span className="text-sm text-txt-muted">총 {data?.total || 0}건</span>
       </div>
