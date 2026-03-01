@@ -31,7 +31,7 @@ export default function VerifyEventsPage() {
   if (error) {
     return (
       <div className="p-8">
-        <div className="text-status-red">검증 이벤트 로드 실패</div>
+        <div className="text-status-red">검증 기록 로드 실패</div>
       </div>
     );
   }
@@ -46,8 +46,7 @@ export default function VerifyEventsPage() {
 
   return (
     <div className="p-8">
-      <div className="mb-6 flex items-center justify-between">
-        <h1 className="text-xl font-semibold text-txt-primary">검증 기록</h1>
+      <div className="mb-6 flex items-center justify-end">
         <span className="text-xs text-txt-muted">60초마다 자동 갱신</span>
       </div>
 
@@ -56,20 +55,20 @@ export default function VerifyEventsPage() {
           <thead>
             <tr className="border-b border-geo-border bg-geo-bg">
               <th className="px-4 py-3 text-left text-xs font-medium text-txt-muted uppercase">DINA ID</th>
-              <th className="px-4 py-3 text-left text-xs font-medium text-txt-muted uppercase">Event Type</th>
-              <th className="px-4 py-3 text-left text-xs font-medium text-txt-muted uppercase">Device</th>
+              <th className="px-4 py-3 text-left text-xs font-medium text-txt-muted uppercase">검증 유형</th>
+              <th className="px-4 py-3 text-left text-xs font-medium text-txt-muted uppercase">기기</th>
               <th className="px-4 py-3 text-center text-xs font-medium text-txt-muted uppercase">Gate A</th>
               <th className="px-4 py-3 text-center text-xs font-medium text-txt-muted uppercase">Gate B</th>
               <th className="px-4 py-3 text-center text-xs font-medium text-txt-muted uppercase">Gate C</th>
               <th className="px-4 py-3 text-left text-xs font-medium text-txt-muted uppercase">GPS</th>
-              <th className="px-4 py-3 text-left text-xs font-medium text-txt-muted uppercase">Created At</th>
+              <th className="px-4 py-3 text-left text-xs font-medium text-txt-muted uppercase">검증 일시</th>
             </tr>
           </thead>
           <tbody>
             {events.length === 0 ? (
               <tr>
                 <td colSpan={8} className="px-4 py-8 text-center text-txt-muted">
-                  검증 이벤트가 없습니다
+                  검증 기록이 없습니다
                 </td>
               </tr>
             ) : (

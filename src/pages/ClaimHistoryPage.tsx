@@ -25,7 +25,7 @@ export default function ClaimHistoryPage() {
   if (error) {
     return (
       <div className="p-8">
-        <div className="text-status-red">Claim 이력 로드 실패</div>
+        <div className="text-status-red">정품 등록 기록 로드 실패</div>
       </div>
     );
   }
@@ -34,8 +34,7 @@ export default function ClaimHistoryPage() {
 
   return (
     <div className="p-8">
-      <div className="mb-6 flex items-center justify-between">
-        <h1 className="text-xl font-semibold text-txt-primary">정품 등록 기록</h1>
+      <div className="mb-6 flex items-center justify-end">
         <span className="text-xs text-txt-muted">60초마다 자동 갱신</span>
       </div>
 
@@ -44,15 +43,15 @@ export default function ClaimHistoryPage() {
           <thead>
             <tr className="border-b border-geo-border bg-geo-bg">
               <th className="px-4 py-3 text-left text-xs font-medium text-txt-muted uppercase">DINA ID</th>
-              <th className="px-4 py-3 text-left text-xs font-medium text-txt-muted uppercase">Device Fingerprint</th>
-              <th className="px-4 py-3 text-left text-xs font-medium text-txt-muted uppercase">Claimed At</th>
+              <th className="px-4 py-3 text-left text-xs font-medium text-txt-muted uppercase">등록 기기</th>
+              <th className="px-4 py-3 text-left text-xs font-medium text-txt-muted uppercase">등록 일시</th>
             </tr>
           </thead>
           <tbody>
             {claims.length === 0 ? (
               <tr>
                 <td colSpan={3} className="px-4 py-8 text-center text-txt-muted">
-                  Claim 이력이 없습니다
+                  정품 등록 기록이 없습니다
                 </td>
               </tr>
             ) : (
