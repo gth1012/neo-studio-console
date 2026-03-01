@@ -51,19 +51,19 @@ export default function WhitelistPage() {
       {showAdd && (
         <div className="bg-geo-card border border-geo-border rounded-xl p-5 mb-4 flex items-end gap-3">
           <div>
-            <label className="block text-xs text-txt-muted mb-1">타입</label>
+            <label className="block text-xs text-txt-muted mb-1">허용 대상</label>
             <select
               value={newType}
               onChange={(e) => setNewType(e.target.value)}
               className="px-3 py-2 bg-geo-main border border-geo-border rounded-lg text-sm text-txt-primary focus:outline-none"
             >
-              <option value="DEVICE">DEVICE</option>
-              <option value="IP">IP</option>
-              <option value="DINA">DINA</option>
+              <option value="DEVICE">기기 허용</option>
+              <option value="IP">IP 허용</option>
+              <option value="DINA">인증코드 허용</option>
             </select>
           </div>
           <div className="flex-1">
-            <label className="block text-xs text-txt-muted mb-1">값</label>
+            <label className="block text-xs text-txt-muted mb-1">대상 정보</label>
             <input
               value={newValue}
               onChange={(e) => setNewValue(e.target.value)}
@@ -93,8 +93,8 @@ export default function WhitelistPage() {
           <thead>
             <tr className="border-b border-geo-border">
               <th className="px-4 py-3 text-left text-xs font-medium text-txt-muted">ID</th>
-              <th className="px-4 py-3 text-left text-xs font-medium text-txt-muted">타입</th>
-              <th className="px-4 py-3 text-left text-xs font-medium text-txt-muted">값</th>
+              <th className="px-4 py-3 text-left text-xs font-medium text-txt-muted">허용 대상</th>
+              <th className="px-4 py-3 text-left text-xs font-medium text-txt-muted">대상 정보</th>
               <th className="px-4 py-3 text-left text-xs font-medium text-txt-muted">만료일</th>
               <th className="px-4 py-3 text-left text-xs font-medium text-txt-muted">생성자</th>
               <th className="px-4 py-3 text-left text-xs font-medium text-txt-muted">생성일</th>

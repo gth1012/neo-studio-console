@@ -18,8 +18,8 @@ export default function AuditPage() {
           <thead>
             <tr className="border-b border-geo-border">
               <th className="px-4 py-3 text-left text-xs font-medium text-txt-muted">ID</th>
-              <th className="px-4 py-3 text-left text-xs font-medium text-txt-muted">액션</th>
-              <th className="px-4 py-3 text-left text-xs font-medium text-txt-muted">대상</th>
+              <th className="px-4 py-3 text-left text-xs font-medium text-txt-muted">작업</th>
+              <th className="px-4 py-3 text-left text-xs font-medium text-txt-muted">대상 항목</th>
               <th className="px-4 py-3 text-left text-xs font-medium text-txt-muted">운영자</th>
               <th className="px-4 py-3 text-left text-xs font-medium text-txt-muted">결과</th>
               <th className="px-4 py-3 text-left text-xs font-medium text-txt-muted">시간</th>

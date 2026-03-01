@@ -21,7 +21,7 @@ export default function DinaSearchPage() {
 
   return (
     <div className="p-8">
-      <h1 className="text-xl font-semibold text-txt-primary mb-6">DINA 검색</h1>
+      <h1 className="text-xl font-semibold text-txt-primary mb-6">인증 코드 조회</h1>
 
       <form onSubmit={handleSearch} className="mb-8">
         <div className="flex gap-3">
@@ -53,7 +53,7 @@ export default function DinaSearchPage() {
 
       {data && (
         <div className="bg-geo-card border border-geo-border rounded-xl p-6">
-          <h2 className="text-lg font-semibold text-txt-primary mb-4">검색 결과</h2>
+          <h2 className="text-lg font-semibold text-txt-primary mb-4">조회 결과</h2>
           <div className="grid grid-cols-2 gap-4">
             <div className="p-4 bg-geo-bg rounded-lg">
               <div className="text-xs text-txt-muted mb-1">DINA ID</div>

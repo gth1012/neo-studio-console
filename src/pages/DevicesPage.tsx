@@ -53,11 +53,11 @@ export default function DevicesPage() {
         <table className="w-full">
           <thead>
             <tr className="border-b border-geo-border">
-              <th className="px-4 py-3 text-left text-xs font-medium text-txt-muted">Fingerprint</th>
-              <th className="px-4 py-3 text-left text-xs font-medium text-txt-muted">Total Claims</th>
-              <th className="px-4 py-3 text-left text-xs font-medium text-txt-muted">Abuse Count</th>
+              <th className="px-4 py-3 text-left text-xs font-medium text-txt-muted">기기 ID</th>
+              <th className="px-4 py-3 text-left text-xs font-medium text-txt-muted">총 검증 횟수</th>
+              <th className="px-4 py-3 text-left text-xs font-medium text-txt-muted">이상 행위 횟수</th>
               <th className="px-4 py-3 text-left text-xs font-medium text-txt-muted">상태</th>
-              <th className="px-4 py-3 text-left text-xs font-medium text-txt-muted">Last Seen</th>
+              <th className="px-4 py-3 text-left text-xs font-medium text-txt-muted">마지막 접속</th>
               <th className="px-4 py-3 text-left text-xs font-medium text-txt-muted">작업</th>
             </tr>
           </thead>

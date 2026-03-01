@@ -35,7 +35,7 @@ export default function ClaimHistoryPage() {
   return (
     <div className="p-8">
       <div className="mb-6 flex items-center justify-between">
-        <h1 className="text-xl font-semibold text-txt-primary">Claim 이력</h1>
+        <h1 className="text-xl font-semibold text-txt-primary">정품 등록 기록</h1>
         <span className="text-xs text-txt-muted">60초마다 자동 갱신</span>
       </div>
 

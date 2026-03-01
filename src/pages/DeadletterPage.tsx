@@ -56,7 +56,7 @@ export default function DeadletterPage() {
               <th className="px-4 py-3 text-left text-xs font-medium text-txt-muted">ID</th>
               <th className="px-4 py-3 text-left text-xs font-medium text-txt-muted">DINA ID</th>
               <th className="px-4 py-3 text-left text-xs font-medium text-txt-muted">에러 메시지</th>
-              <th className="px-4 py-3 text-left text-xs font-medium text-txt-muted">Retry</th>
+              <th className="px-4 py-3 text-left text-xs font-medium text-txt-muted">재시도 횟수</th>
               <th className="px-4 py-3 text-left text-xs font-medium text-txt-muted">상태</th>
               <th className="px-4 py-3 text-left text-xs font-medium text-txt-muted">생성일</th>
               <th className="px-4 py-3 text-left text-xs font-medium text-txt-muted">작업</th>

@@ -19,7 +19,7 @@ export default function DashboardPage() {
   if (error) {
     return (
       <div className="p-8">
-        <div className="text-status-red">대시보드 로드 실패</div>
+        <div className="text-status-red">운영 현황 로드 실패</div>
       </div>
     );
   }

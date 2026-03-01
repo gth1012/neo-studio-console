@@ -47,7 +47,7 @@ export default function VerifyEventsPage() {
   return (
     <div className="p-8">
       <div className="mb-6 flex items-center justify-between">
-        <h1 className="text-xl font-semibold text-txt-primary">검증 이벤트</h1>
+        <h1 className="text-xl font-semibold text-txt-primary">검증 기록</h1>
         <span className="text-xs text-txt-muted">60초마다 자동 갱신</span>
       </div>
 
