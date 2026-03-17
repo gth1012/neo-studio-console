@@ -6,6 +6,8 @@ export default function DashboardPage() {
     queryKey: ['dashboard'],
     queryFn: () => api.get('/api/admin/dashboard').then((res) => res.data),
     refetchInterval: 30000,
+    staleTime: 20000,
+    retry: false,
   });
 
   if (isLoading) {
@@ -16,7 +18,13 @@ export default function DashboardPage() {
     );
   }
 
+  // 401 에러 시 → AuthLogoutHandler가 /login으로 이동 처리
+  // 그 사이 "로드 실패" 노출 방지 → 빈 화면 유지
   if (error) {
+    const status = (error as any)?.response?.status;
+    if (status === 401) {
+      return null;
+    }
     return (
       <div className="p-8">
         <div className="text-status-red">운영 현황 로드 실패</div>
@@ -46,7 +54,6 @@ export default function DashboardPage() {
         </div>
         <span className="text-xs text-txt-muted">30초마다 자동 갱신</span>
       </div>
-
       <div className="grid grid-cols-3 gap-4">
         {cards.map((card) => (
           <div
