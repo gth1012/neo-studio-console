@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate, useNavigate } from 'react-router-dom';
+﻿import { BrowserRouter, Routes, Route, Navigate, useNavigate } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { useAuthStore } from './stores/auth.store';
 import { useEffect } from 'react';
@@ -15,7 +15,6 @@ import DinaSearchPage from './pages/DinaSearchPage';
 import ClaimHistoryPage from './pages/ClaimHistoryPage';
 import VerifyEventsPage from './pages/VerifyEventsPage';
 import SeriesStatusPage from './pages/SeriesStatusPage';
-import SettingsPage from './pages/SettingsPage';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -31,10 +30,11 @@ function PrivateRoute({ children }: { children: React.ReactNode }) {
   return token ? <>{children}</> : <Navigate to="/login" />;
 }
 
-// 401 auto logout handler
+// 401 자동 로그아웃 처리
 function AuthLogoutHandler() {
   const { logout } = useAuthStore();
   const navigate = useNavigate();
+
   useEffect(() => {
     const handler = () => {
       logout();
@@ -44,6 +44,7 @@ function AuthLogoutHandler() {
     window.addEventListener('auth:logout', handler);
     return () => window.removeEventListener('auth:logout', handler);
   }, [logout, navigate]);
+
   return null;
 }
 
@@ -72,7 +73,6 @@ export default function App() {
             <Route path="/dina-search" element={<DinaSearchPage />} />
             <Route path="/claim-history" element={<ClaimHistoryPage />} />
             <Route path="/verify-events" element={<VerifyEventsPage />} />
-            <Route path="/settings" element={<SettingsPage />} />
           </Route>
         </Routes>
       </BrowserRouter>
