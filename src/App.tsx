@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate, useNavigate } from 'react-router-dom';
+﻿import { BrowserRouter, Routes, Route, Navigate, useNavigate } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { useAuthStore } from './stores/auth.store';
 import { useEffect } from 'react';
@@ -16,6 +16,7 @@ import ClaimHistoryPage from './pages/ClaimHistoryPage';
 import VerifyEventsPage from './pages/VerifyEventsPage';
 import SeriesStatusPage from './pages/SeriesStatusPage';
 import SettingsPage from './pages/SettingsPage';
+import UsersPage from './pages/UsersPage';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -73,9 +74,11 @@ export default function App() {
             <Route path="/claim-history" element={<ClaimHistoryPage />} />
             <Route path="/verify-events" element={<VerifyEventsPage />} />
             <Route path="/settings" element={<SettingsPage />} />
+            <Route path="/users" element={<UsersPage />} />
           </Route>
         </Routes>
       </BrowserRouter>
     </QueryClientProvider>
   );
 }
+
