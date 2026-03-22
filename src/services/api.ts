@@ -1,13 +1,12 @@
-import axios from 'axios';
+﻿import axios from 'axios';
 
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || 'https://neo-studio-api-production.up.railway.app',
+  baseURL: 'https://neo-api.artionchain.com',
   headers: {
     'Content-Type': 'application/json',
   },
 });
 
-// 요청 인터셉터: JWT 토큰 자동 첨부
 api.interceptors.request.use((config) => {
   const token = localStorage.getItem('neo-token');
   if (token) {
@@ -16,7 +15,6 @@ api.interceptors.request.use((config) => {
   return config;
 });
 
-// 응답 인터셉터: 401 시 refresh 시도 → 실패 시 로그아웃
 let isRefreshing = false;
 let failedQueue: { resolve: (token: string) => void; reject: (err: any) => void }[] = [];
 
@@ -47,7 +45,7 @@ api.interceptors.response.use(
         const currentToken = localStorage.getItem('neo-token');
         if (!currentToken) throw new Error('No token');
         const res = await axios.post(
-          `${import.meta.env.VITE_API_URL || 'https://neo-studio-api-production.up.railway.app'}/api/admin/auth/refresh`,
+          'https://neo-api.artionchain.com/api/admin/auth/refresh',
           {},
           { headers: { Authorization: `Bearer ${currentToken}` } }
         );

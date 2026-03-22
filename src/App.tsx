@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate, useNavigate } from 'react-router-dom';
+﻿import { BrowserRouter, Routes, Route, Navigate, useNavigate } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { useAuthStore } from './stores/auth.store';
 import { useEffect } from 'react';
@@ -51,7 +51,7 @@ function AuthLogoutHandler() {
 export default function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <BrowserRouter basename="/neo-studio-console">
+      <BrowserRouter basename="/">
         <Toast />
         <AuthLogoutHandler />
         <Routes>
