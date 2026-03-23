@@ -4,57 +4,57 @@ import { useEffect, useState } from 'react';
 
 const menuItems = [
   {
-    section: 'MONITORING',
+    section: '모니터링',
     items: [
-      { path: '/', label: 'Dashboard', icon: (
+      { path: '/', label: '운영 현황', icon: (
         <svg className="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
       )},
     ],
   },
   {
-    section: 'ASSETS',
+    section: '자산 현황',
     items: [
-      { path: '/series-status', label: 'Series Status', icon: (
+      { path: '/series-status', label: '시리즈별 현황', icon: (
         <svg className="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
       )},
-      { path: '/dina-search', label: 'Asset Search', icon: (
+      { path: '/dina-search', label: '자산 조회', icon: (
         <svg className="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
       )},
-      { path: '/claim-history', label: 'Claim History', icon: (
+      { path: '/claim-history', label: '등록 현황', icon: (
         <svg className="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
       )},
     ],
   },
   {
-    section: 'OPERATIONS',
+    section: '운영',
     items: [
-      { path: '/deadletter', label: 'Failed Events', icon: (
+      { path: '/deadletter', label: '처리 실패 기록', icon: (
         <svg className="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
       )},
-      { path: '/verify-events', label: 'Verify Events', icon: (
+      { path: '/verify-events', label: '검증 기록', icon: (
         <svg className="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="9,11 12,14 22,4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
       )},
     ],
   },
   {
-    section: 'SYSTEM',
+    section: '시스템',
     items: [
-      { path: '/devices', label: 'Blocked Devices', icon: (
+      { path: '/devices', label: '차단 기기 관리', icon: (
         <svg className="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
       )},
-      { path: '/whitelist', label: 'Whitelist', icon: (
+      { path: '/whitelist', label: '허용 기기 관리', icon: (
         <svg className="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
       )},
-      { path: '/ratelimit', label: 'Rate Limit', icon: (
+      { path: '/ratelimit', label: '요청 제한 관리', icon: (
         <svg className="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="22,12 18,12 15,21 9,3 6,12 2,12"/></svg>
       )},
-      { path: '/audit', label: 'Audit Log', icon: (
+      { path: '/audit', label: '관리 기록', icon: (
         <svg className="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
       )},
-      { path: '/users', label: 'Users', icon: (
+      { path: '/users', label: '사용자 관리', icon: (
         <svg className="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
       )},
-      { path: '/settings', label: 'Settings', icon: (
+      { path: '/settings', label: '설정', icon: (
         <svg className="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
       )},
     ],
@@ -137,7 +137,7 @@ export default function Layout() {
             <svg className="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4M16 17l5-5-5-5M21 12H9"/>
             </svg>
-            <span>Logout</span>
+            <span>로그아웃</span>
           </button>
         </div>
       </aside>
